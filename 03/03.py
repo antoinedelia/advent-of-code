@@ -21,9 +21,8 @@ for i, item in enumerate(items, start=1):
     # Second part
     last_three_items.append(item)
     if i % 3 == 0:
-        common_character_one = "".join(set(last_three_items[0]).intersection(last_three_items[1]))
-        common_character_two = "".join(set(common_character_one).intersection(last_three_items[2]))
-        total_priority_part_two += MAP_LETTER_PRIORITY[common_character_two]
+        common_character = "".join(set(last_three_items[0]).intersection(last_three_items[1], last_three_items[2]))
+        total_priority_part_two += MAP_LETTER_PRIORITY[common_character]
         last_three_items = []
 
 print(total_priority_part_one)
