@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from math import floor
+from math import lcm
 import heapq
 from functools import reduce
 import operator
@@ -67,9 +67,7 @@ for i, monkey in enumerate(input.split("\n\n")):
             new_monkey.next_monkey_id_if_false = [int(s) for s in re.findall(r"\b\d+\b", line)][0]
     monkeys.append(new_monkey)
 
-modulo = 1
-for i in [m.divisible_by for m in monkeys]:
-    modulo *= i
+modulo = lcm(*(m.divisible_by for m in monkeys))
 
 for _ in range(10000):
     for monkey in monkeys:
