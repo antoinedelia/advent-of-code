@@ -5,10 +5,6 @@ x = open(0).read()
 
 starts = []
 
-map_dir = {
-    "L": 0,
-    "R": 1,
-}
 
 map_paths = {}
 
